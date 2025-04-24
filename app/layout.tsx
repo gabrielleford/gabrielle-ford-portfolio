@@ -1,16 +1,5 @@
 import type { Metadata } from 'next';
-// import { Geist, Geist_Mono } from "next/font/google";
 import './globals.css';
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: 'Gabrielle Ford | Full Stack Developer',
@@ -24,20 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
-        <header>
-          <a
-            className='skipNavLink'
-            href='#mainContent'
-          >
-            Skip to main content
-          </a>
-        </header>
-
-        <main id='mainContent'>{children}</main>
-
-        <footer></footer>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
