@@ -222,14 +222,16 @@ export default function Contact() {
           </div>
 
           {/* Status message — announced to screen readers via aria-live */}
-          <p
-            ref={statusRef}
-            role='status'
-            aria-live='polite'
-            className={`${styles.status} ${status?.ok ? styles.statusOk : styles.statusErr}`}
-          >
-            {status && status.text}
-          </p>
+          {status && (
+            <p
+              ref={statusRef}
+              role='status'
+              aria-live='polite'
+              className={`${styles.status} ${status?.ok ? styles.statusOk : styles.statusErr}`}
+            >
+              {status && status.text}
+            </p>
+          )}
 
           <button
             type='submit'

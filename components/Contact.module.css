@@ -134,7 +134,7 @@
 /* Status message */
 .status {
   font-size: 0.8rem;
-  min-height: 1.2em;
+  animation: statusFade 0.4s ease-in forwards;
 }
 
 .statusOk {
@@ -142,6 +142,17 @@
 }
 .statusErr {
   color: var(--secondary);
+}
+
+@keyframes statusFade {
+  from {
+    opacity: 0;
+    transform: translateY(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Send button */

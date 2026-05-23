@@ -202,7 +202,7 @@ body {
 /* =============================================
    ANIMATIONS
 ============================================= */
-/* @keyframes fadeUp {
+@keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -230,10 +230,10 @@ body {
 .animate-fade-in {
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
-} */
+}
 
 /* Staggered delays for hero children */
-/* .delay-100 {
+.delay-100 {
   animation-delay: 0.1s;
 }
 .delay-250 {
@@ -247,7 +247,7 @@ body {
 }
 .delay-700 {
   animation-delay: 0.7s;
-} */
+}
 
 .section-eyebrow {
   font-size: 0.72rem;
