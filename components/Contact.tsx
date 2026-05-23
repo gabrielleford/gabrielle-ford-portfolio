@@ -1,7 +1,8 @@
 'use client';
 
-import { ExternalLink, FileDown, Send } from 'lucide-react';
+import { ExternalLink, Send } from 'lucide-react';
 import { useState, useRef } from 'react';
+import styles from './Contact.module.css';
 
 const formspreeID = 'myylvdwp';
 
@@ -106,36 +107,28 @@ export default function Contact() {
     <section
       id='contact'
       aria-labelledby='contact-heading'
-      style={{ padding: '5rem 2.5rem' }}
+      className={styles.section}
     >
-      <p style={eyebrow}>Let&apos;s talk</p>
+      <p className='section-eyebrow'>Let&apos;s talk</p>
       <h2
         id='contact-heading'
-        style={sectionTitle}
+        className='section-title'
       >
         Open to opportunities &amp; collaboration.
       </h2>
 
-      <div className='contact-grid'>
+      <div className={styles.grid}>
         {/* Left: contact links */}
         <div>
-          <p
-            style={{
-              fontSize: '0.9rem',
-              color: 'var(--text-muted)',
-              lineHeight: 1.85,
-              maxWidth: '400px',
-              marginBottom: '0.5rem',
-            }}
-          >
-            I&apos;m always interested in full-stack roles, freelance projects,
-            or just connecting with other builders. Reach out and I&apos;ll get
-            back to you.
+          <p className={styles.intro}>
+            I&apos;m always interested in integration and full-stack roles,
+            freelance projects, or just connecting with other builders. Reach
+            out and I&apos;ll get back to you.
           </p>
 
           <nav
             aria-label='Contact links'
-            style={{ display: 'flex', flexDirection: 'column' }}
+            className={styles.linkList}
           >
             {contactLinks.map((link) => (
               <a
@@ -144,46 +137,10 @@ export default function Contact() {
                 aria-label={link.ariaLabel}
                 target='_blank'
                 rel='noopener noreferrer'
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  color: 'var(--text)',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                  padding: '0.85rem 0',
-                  borderBottom: '1px solid var(--divider)',
-                  transition: 'color 0.2s, padding-left 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color =
-                    'var(--text-muted)';
-                  (e.currentTarget as HTMLElement).style.paddingLeft =
-                    '0.35rem';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = 'var(--text)';
-                  (e.currentTarget as HTMLElement).style.paddingLeft = '0';
-                }}
+                className={styles.linkItem}
               >
-                <span
-                  style={{
-                    fontSize: '0.68rem',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    color: 'var(--text-muted)',
-                    minWidth: '70px',
-                  }}
-                >
-                  {link.label}
-                </span>
-                <span
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.3rem',
-                  }}
-                >
+                <span className={styles.linkLabel}>{link.label}</span>
+                <span className={styles.linkText}>
                   {link.text}
                   {link.icon}
                 </span>
@@ -197,24 +154,13 @@ export default function Contact() {
           aria-label='Contact form'
           noValidate
           onSubmit={handleSubmit}
-          style={{
-            background: 'var(--glass-bg)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid var(--glass-border)',
-            borderRadius: '20px',
-            padding: '2rem',
-            boxShadow: '0 8px 32px var(--glass-shadow)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-          }}
+          className={styles.form}
         >
           {/* Name */}
           <div>
             <label
               htmlFor='cf-name'
-              style={labelStyle}
+              className={styles.label}
             >
               Name
             </label>
@@ -228,14 +174,7 @@ export default function Contact() {
               autoComplete='name'
               required
               aria-required='true'
-              style={inputStyle}
-              onFocus={(e) => {
-                (e.target as HTMLElement).style.borderColor = 'var(--primary)';
-              }}
-              onBlur={(e) => {
-                (e.target as HTMLElement).style.borderColor =
-                  'var(--glass-border)';
-              }}
+              className={styles.input}
             />
           </div>
 
@@ -243,7 +182,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor='cf-email'
-              style={labelStyle}
+              className={styles.label}
             >
               Email
             </label>
@@ -257,14 +196,7 @@ export default function Contact() {
               autoComplete='email'
               required
               aria-required='true'
-              style={inputStyle}
-              onFocus={(e) => {
-                (e.target as HTMLElement).style.borderColor = 'var(--primary)';
-              }}
-              onBlur={(e) => {
-                (e.target as HTMLElement).style.borderColor =
-                  'var(--glass-border)';
-              }}
+              className={styles.input}
             />
           </div>
 
@@ -272,7 +204,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor='cf-message'
-              style={labelStyle}
+              className={styles.label}
             >
               Message
             </label>
@@ -285,14 +217,7 @@ export default function Contact() {
               required
               aria-required='true'
               rows={5}
-              style={{ ...inputStyle, resize: 'vertical' }}
-              onFocus={(e) => {
-                (e.target as HTMLElement).style.borderColor = 'var(--primary)';
-              }}
-              onBlur={(e) => {
-                (e.target as HTMLElement).style.borderColor =
-                  'var(--glass-border)';
-              }}
+              className={styles.textarea}
             />
           </div>
 
@@ -301,104 +226,19 @@ export default function Contact() {
             ref={statusRef}
             role='status'
             aria-live='polite'
-            style={{
-              fontSize: '0.8rem',
-              minHeight: '1.2em',
-              color: status?.ok ? 'var(--accent)' : 'var(--secondary)',
-            }}
+            className={`${styles.status} ${status?.ok ? styles.statusOk : styles.statusErr}`}
           >
-            {status?.text ?? ''}
+            {status && status.text}
           </p>
 
           <button
             type='submit'
-            style={{
-              display: 'flex',
-              gap: '0.5rem',
-              alignItems: 'center',
-              background:
-                'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-              color: '#4a3a5a',
-              border: 'none',
-              borderRadius: '30px',
-              padding: '0.8rem 1.8rem',
-              fontFamily: 'var(--font-dm-sans)',
-              fontSize: '0.8rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              alignSelf: 'flex-start',
-              fontWeight: 500,
-              transition: 'opacity 0.2s, transform 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '0.85';
-              (e.currentTarget as HTMLElement).style.transform =
-                'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '1';
-              (e.currentTarget as HTMLElement).style.transform = 'none';
-            }}
+            className={styles.sendBtn}
           >
             Send Message <Send size={16} />
           </button>
         </form>
       </div>
-
-      <style>{`
-        .contact-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-          align-items: start;
-        }
-        @media (max-width: 900px) {
-          .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-        }
-        @media (max-width: 640px) {
-          #contact { padding: 3.5rem 1.25rem; }
-        }
-      `}</style>
     </section>
   );
 }
-
-const eyebrow: React.CSSProperties = {
-  fontSize: '0.72rem',
-  letterSpacing: '0.18em',
-  textTransform: 'uppercase',
-  color: 'var(--text-muted)',
-  marginBottom: '0.5rem',
-};
-
-const sectionTitle: React.CSSProperties = {
-  fontFamily: 'var(--font-cormorant)',
-  fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-  fontWeight: 300,
-  letterSpacing: '-0.01em',
-  color: 'var(--text)',
-  marginBottom: '3rem',
-};
-
-const labelStyle: React.CSSProperties = {
-  display: 'block',
-  fontSize: '0.72rem',
-  letterSpacing: '0.1em',
-  textTransform: 'uppercase',
-  color: 'var(--text-muted)',
-  marginBottom: '0.3rem',
-};
-
-const inputStyle: React.CSSProperties = {
-  width: '100%',
-  background: 'rgba(255,255,255,0.35)',
-  border: '1px solid var(--glass-border)',
-  borderRadius: '10px',
-  padding: '0.7rem 1rem',
-  fontFamily: 'var(--font-dm-sans)',
-  fontSize: '0.875rem',
-  color: 'var(--text)',
-  outline: 'none',
-  transition: 'border-color 0.2s',
-};

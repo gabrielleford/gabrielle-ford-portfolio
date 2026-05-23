@@ -1,0 +1,197 @@
+/* =============================================
+   CONTACT
+============================================= */
+.section {
+  padding: 5rem 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.intro {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  max-width: 400px;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact link list */
+.linkList {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--divider);
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
+}
+
+.linkItem:hover {
+  color: var(--text-muted);
+  padding-left: 0.35rem;
+}
+
+.linkItem:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.linkLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 70px;
+}
+
+.linkText {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* Glass contact form */
+.form {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--text);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Dark mode form fields */
+:global(.dark) .input,
+:global(.dark) .textarea {
+  background: rgba(60, 50, 80, 0.4);
+}
+
+:global(.dark) .input:focus,
+:global(.dark) .textarea:focus {
+  background: rgba(80, 65, 100, 0.5);
+}
+
+.textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Status message */
+.status {
+  font-size: 0.8rem;
+  min-height: 1.2em;
+}
+
+.statusOk {
+  color: var(--accent);
+}
+.statusErr {
+  color: var(--secondary);
+}
+
+/* Send button */
+.sendBtn {
+  /* background: var(--btn-dark-bg); */
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #4a3a5a;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-family: var(--font-dm-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-start;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.sendBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.sendBtn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 1.25rem;
+  }
+  .grid {
+    gap: 1.5rem;
+  }
+}

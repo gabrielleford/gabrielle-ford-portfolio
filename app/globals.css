@@ -7,9 +7,6 @@
   --color-secondary: #f4c2c2;
   --color-accent: #b0e0e6;
   --color-ghost: #f8f8ff;
-
-  --font-sans: var(--font-dm-sans), sans-serif;
-  --font-serif: var(--font-cormorant), serif;
 }
 
 /*
@@ -36,7 +33,7 @@
 ============================================= */
 
 /* ---- Light mode (default) ---- */
-/* :root {
+:root {
   --primary: #d8bfd8;
   --secondary: #f4c2c2;
   --accent: #b0e0e6;
@@ -45,57 +42,74 @@
   --text-muted: #7a7a8a;
 
   /* Glassmorphism */
-/* --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg: rgba(255, 255, 255, 0.45);
   --glass-border: rgba(255, 255, 255, 0.65);
-  --glass-shadow: rgba(180, 160, 200, 0.18); */
+  --glass-shadow: rgba(180, 160, 200, 0.18);
 
-/* Nav */
-/* --nav-bg: rgba(248, 248, 255, 0.8); */
+  /* Nav */
+  --nav-bg: rgba(248, 248, 255, 0.8);
 
-/* Cards */
-/* --card-bg: rgba(255, 255, 255, 0.55);
-  --card-border: rgba(216, 191, 216, 0.35); */
+  /* Cards */
+  --card-bg: rgba(255, 255, 255, 0.55);
+  --card-border: rgba(216, 191, 216, 0.35);
 
-/* Tags */
-/* --tag-bg: rgba(176, 224, 230, 0.25);
+  /* Tags */
+  --tag-bg: rgba(176, 224, 230, 0.25);
   --tag-border: rgba(176, 224, 230, 0.5);
-  --tag-text: #5a8fa0; */
+  --tag-text: #5a8fa0;
 
-/* Skill level badge */
-/* --badge-bg: rgba(216, 191, 216, 0.25);
-  --badge-text: #8a6b9a; */
+  /* Skill level badge */
+  --badge-bg: rgba(216, 191, 216, 0.25);
+  --badge-text: #8a6b9a;
 
-/* Timeline */
-/* --dot-color: #d8bfd8;
-  --divider: rgba(216, 191, 216, 0.4); */
+  /* Timeline */
+  --dot-color: #d8bfd8;
+  --divider: rgba(216, 191, 216, 0.4);
 
-/* Buttons */
-/* --btn-dark-bg: #4a4a4a;
+  /* Buttons */
+  --btn-dark-bg: #4a4a4a;
   --btn-dark-text: #ffffff;
   --btn-outline-border: #d8bfd8;
-} */
+}
 
 /* ---- Dark mode ---- */
 .dark {
-  --bg: #1a1820;
-  --text: #e8e4f0;
-  --text-muted: #a09ab8;
-  --glass-bg: rgba(40, 35, 55, 0.55);
-  --glass-border: rgba(100, 80, 130, 0.35);
-  --glass-shadow: rgba(0, 0, 0, 0.4);
-  --nav-bg: rgba(26, 24, 32, 0.85);
-  --card-bg: rgba(40, 35, 55, 0.6);
-  --card-border: rgba(120, 100, 150, 0.3);
-  --tag-bg: rgba(80, 120, 130, 0.25);
-  --tag-border: rgba(80, 180, 200, 0.3);
-  --tag-text: #7dcce0;
-  --badge-bg: rgba(120, 90, 140, 0.3);
-  --badge-text: #d0aee8;
-  --dot-color: #a080c0;
-  --divider: rgba(120, 100, 150, 0.25);
-  --btn-dark-bg: #e8e4f0;
-  --btn-dark-text: #1a1820;
-  --btn-outline-border: #a080c0;
+  --primary: #b48ad6;
+  --secondary: #e08b9a;
+  --accent: #73c7d4;
+  --bg: #11131a;
+
+  --text: #f2edf7;
+  --text-muted: #b7aec9;
+
+  /* Glass / surfaces */
+  --glass-bg: rgba(34, 30, 48, 0.62);
+  --glass-border: rgba(180, 138, 214, 0.22);
+  --glass-shadow: rgba(0, 0, 0, 0.45);
+
+  --nav-bg: rgba(17, 19, 26, 0.82);
+
+  --card-bg: rgba(36, 32, 50, 0.72);
+  --card-border: rgba(180, 138, 214, 0.18);
+
+  /* Tags */
+  --tag-bg: rgba(115, 199, 212, 0.16);
+  --tag-border: rgba(115, 199, 212, 0.32);
+  --tag-text: #9edee8;
+
+  /* Badges */
+  --badge-bg: rgba(180, 138, 214, 0.18);
+  --badge-text: #e2c8f7;
+
+  /* Misc */
+  --dot-color: #b48ad6;
+  --divider: rgba(180, 138, 214, 0.14);
+
+  /* Buttons */
+  --btn-dark-bg: #f2edf7;
+  --btn-dark-text: #11131a;
+
+  --btn-outline-border: #b48ad6;
 }
 
 /* =============================================
@@ -234,6 +248,29 @@ body {
 .delay-700 {
   animation-delay: 0.7s;
 } */
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    margin-bottom: 1rem;
+  }
+}
 
 /* =============================================
    REDUCED MOTION (accessibility)
