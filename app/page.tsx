@@ -1,8 +1,10 @@
-// import { About } from '@/components/About';
-// import { Contact } from '@/components/Contact';
-// import { DevTools } from '@/components/DevTools';
-// import { Projects } from '@/components/Projects';
+import Contact from '@/components/Contact';
+import { Experience } from '@/components/Experience';
+import { Hero } from '@/components/Hero';
+import { Projects } from '@/components/Projects';
+import { Skills } from '@/components/Skills';
 import { Nav } from '@/components/Nav';
+import { Footer } from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -10,33 +12,22 @@ export default function Home() {
       <header>
         <a
           className='skipNavLink'
-          href='#mainContent'
+          href='#main'
         >
           Skip to main content
         </a>
         <Nav />
       </header>
 
-      {/* <main id='mainContent'>
-        About
-        <section>
-          <About />
-        </section>
-        Projects
-        <section>
-          <Projects />
-        </section>
-        Dev Tools
-        <section>
-          <DevTools />
-        </section>
-        Contact
-        <section>
-          <Contact />
-        </section>
-      </main> */}
+      <main id='main'>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
 
-      {/* <footer></footer> */}
+      <Footer />
     </div>
   );
 }
