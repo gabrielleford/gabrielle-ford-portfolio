@@ -1,0 +1,200 @@
+/* =============================================
+   HERO
+============================================= */
+.hero {
+  /* min-height: 100vh; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 3rem 2.5rem;
+  gap: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-family: var(--font-cormorant);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.4rem;
+}
+
+.desc {
+  max-width: 480px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Primary filled button */
+.btnPrimary {
+  background: var(--btn-dark-bg);
+  color: var(--btn-dark-text);
+  padding: 0.75rem 1.6rem;
+  border-radius: 40px;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Outline / glass button */
+.btnOutline {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text);
+  padding: 0.75rem 1.6rem;
+  border-radius: 40px;
+  border: 1px solid var(--btn-outline-border);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.btnOutline:hover {
+  transform: translateY(-2px);
+  background: rgba(216, 191, 216, 0.25);
+}
+
+.btnOutline:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Floating glass stats card */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 40px var(--glass-shadow);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dark .statItem {
+  background: rgba(80, 65, 100, 0.3);
+}
+
+.statNum {
+  font-family: var(--font-cormorant);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stackLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.stackTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-text);
+  border-radius: 20px;
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  .desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+
+  .card {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 1.75rem 1.25rem 3rem;
+  }
+}
