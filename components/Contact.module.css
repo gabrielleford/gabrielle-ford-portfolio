@@ -2,7 +2,7 @@
    CONTACT
 ============================================= */
 .section {
-  padding: 5rem 2.5rem;
+  padding: 3rem 2.5rem;
 }
 
 .grid {
@@ -200,7 +200,7 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: 3.5rem 1.25rem;
+    padding: 1.25rem 1.25rem;
   }
   .grid {
     gap: 1.5rem;
