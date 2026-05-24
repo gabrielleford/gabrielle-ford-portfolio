@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <header>
         <a
-          className='skipNavLink'
+          className='skip-link'
           href='#main'
         >
           Skip to main content

@@ -137,7 +137,7 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url('/desktop-background.png');
+  background-image: url('/desktopBg.webp');
   background-size: cover;
   background-position: center top;
   opacity: 0.55;
@@ -148,9 +148,31 @@ body::before {
   opacity: 0.18;
 }
 
+/* Large screens (≥1441px) */
+@media (min-width: 1441px) {
+  body::before {
+    background-image: url('/largeBg.webp');
+  }
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  body::before {
+    background-image: url('/tabletBg.webp');
+  }
+}
+
+/* Small tablet (≤768px) */
+@media (max-width: 768px) {
+  body::before {
+    background-image: url('/smallTabletBg.webp');
+  }
+}
+
+/* Mobile (≤640px) */
 @media (max-width: 640px) {
   body::before {
-    background-image: url('/mobile-background.png');
+    background-image: url('/mobileBg.webp');
   }
 }
 
@@ -192,7 +214,16 @@ body::before {
 /* =============================================
    GRADIENT TEXT (hero headings)
 ============================================= */
+/* Light mode: deeper, more saturated gradient */
 .gradient-text {
+  background: linear-gradient(135deg, #7b3da8 0%, #c03870 50%, #1e86a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode: original soft pastel gradient */
+.dark .gradient-text {
   background: linear-gradient(135deg, #c9a0d8 0%, #f4b8c4 50%, #90d0e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
