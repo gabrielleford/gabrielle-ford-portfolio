@@ -145,7 +145,7 @@ body::before {
 }
 
 .dark body::before {
-  opacity: 0.18;
+  opacity: 0.27;
 }
 
 /* Large screens (≥1441px) */
