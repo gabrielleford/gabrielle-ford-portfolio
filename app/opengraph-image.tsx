@@ -77,7 +77,7 @@ export default async function Image() {
         {/* Eyebrow */}
         <p
           style={{
-            fontSize: 20,
+            fontSize: 23,
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
             color: '#ccc4dd',
@@ -91,7 +91,7 @@ export default async function Image() {
         {/* Name */}
         <h1
           style={{
-            fontSize: 108,
+            fontSize: 122,
             fontWeight: 300,
             lineHeight: 1.05,
             margin: '0 0 20px 0',
@@ -106,7 +106,7 @@ export default async function Image() {
         {/* Tagline */}
         <p
           style={{
-            fontSize: 42,
+            fontSize: 48,
             fontWeight: 300,
             fontStyle: 'normal',
             fontFamily: 'Cormorant Garamond',
@@ -127,7 +127,7 @@ export default async function Image() {
             <span
               key={tech}
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 padding: '6px 16px',
                 background: 'rgba(115,199,212,0.15)',
                 border: '1px solid rgba(115,199,212,0.35)',
@@ -148,7 +148,7 @@ export default async function Image() {
             position: 'absolute',
             bottom: 40,
             right: 80,
-            fontSize: 17,
+            fontSize: 20,
             color: 'rgba(200,192,218,0.7)',
             margin: 0,
             letterSpacing: '0.08em',
